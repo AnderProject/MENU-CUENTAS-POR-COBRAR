@@ -8,7 +8,7 @@ class Persona(ABC):
         self.estado = estado
 
     @property
-    def mostrar_idCodigo(self):
+    def idCodigo(self):
         return self.__idCodigo
 
     @abstractmethod
@@ -26,7 +26,7 @@ class Cliente(Persona):
         self.cedula = cedula
 
     @property
-    def mostrar_idCliente(self):
+    def idCliente(self):
         return self.idCliente
 
     def mostarDatos(self):
@@ -45,7 +45,7 @@ class Factura:
         self.estado = estado
     
     @property
-    def mostrar_idFactura(self):
+    def idFactura(self):
         return self.idFactura
 
     def mostarDatos(self):
@@ -68,7 +68,7 @@ class CabCredito:
         self.estado = estado
     
     @property
-    def mostrar_idCabCredito(self):
+    def idCabCredito(self):
         return self.idCadCredito
 
     def mostarDatos(self):
@@ -86,7 +86,7 @@ class DetCredito:
         self.estado = estado
     
     @property
-    def mostrar_idDetCredito(self):
+    def idDetCredito(self):
         return self.idDetCredito
 
     def mostarDatos(self):
@@ -111,7 +111,7 @@ class Pago:
         self.valor = valor
 
     @property
-    def mostrar_idPago(self):
+    def idPago(self):
         return self.idPago
 
     def mostarDatos(self):
@@ -174,13 +174,13 @@ def menu():
                         with open("./archivos_txt/clientes.txt", "r") as archivo:
                             print(archivo.read())
                     except ValueError:
-                        print("\x1b[1;31m" +"No hay datos de clientes guardados en el archivo clientes.txt""\033[0m")
+                        print("\x1b[1;31m" +"No hay datos""\033[0m")
                 elif opc==3:
                     borrarPantalla()        
                     break
                 else:
                     borrarPantalla()
-                    print("\x1b[1;31m" +"Opción inválida""\033[0m")
+                    print("\x1b[1;31m" +"Error vuelva a intentar""\033[0m")
 
         elif opc == 2:
             borrarPantalla()
@@ -214,13 +214,13 @@ def menu():
                         with open("./archivos_txt/facturas.txt", "r") as archivo:
                             print(archivo.read())
                     except ValueError:
-                        print("\x1b[1;31m" +"No hay datos de facturas guardados en el archivo facturas.txt""\033[0m")        
+                        print("\x1b[1;31m" +"No hay datos""\033[0m")        
                 elif opc == 3:
                     borrarPantalla()
                     break
                 else:
                     borrarPantalla()
-                    print("\x1b[1;31m" +"Opción inválida""\033[0m")
+                    print("\x1b[1;31m" +"Error vuelva a intentar""\033[0m")
 
         elif opc == 3:
             borrarPantalla()
@@ -264,14 +264,14 @@ def menu():
                         with open("./archivos_txt/creditos.txt", "r") as archivo:
                             print(archivo.read())
                     except:
-                        print("\x1b[1;31m" +"No hay datos de créditos guardados en el archivo creditos.txt""\033[0m")
+                        print("\x1b[1;31m" +"No hay datos""\033[0m")
                 elif opc ==3:  
                     borrarPantalla()      
                     break 
 
                 else:
                     borrarPantalla()
-                    print("\x1b[1;31m" +"Opción inválida""\033[0m")
+                    print("\x1b[1;31m" +"Error vuelva a intentar""\033[0m")
 
         elif opc == 4:
             borrarPantalla()
@@ -306,13 +306,13 @@ def menu():
                         with open("./archivos_txt/pagos.txt", "r") as file:
                             print(file.read())
                     except FileNotFoundError:
-                        print("\x1b[1;31m" +"No hay datos de pagos guardados en el archivo pagos.txt""\033[0m")
+                        print("\x1b[1;31m" +"No hay datos""\033[0m")
                 elif opc ==3:
                     borrarPantalla()        
                     break  
                 else:
                     borrarPantalla()
-                    print("\x1b[1;31m" +"Opción inválida""\033[0m")
+                    print("\x1b[1;31m" +"Error vuelva a intentar""\033[0m")
 
         elif opc == 5:
             borrarPantalla()
@@ -330,7 +330,7 @@ def menu():
                         with open("./archivos_txt/clientes.txt", "r") as archivo:
                             print(archivo.read())
                     except FileNotFoundError:
-                        print("\x1b[1;31m" +"No hay datos de clientes guardados en el archivo clientes.txt""\033[0m")
+                        print("\x1b[1;31m" +"No hay datos""\033[0m")
                 
                 elif opc == 2:
                     borrarPantalla()
@@ -338,7 +338,7 @@ def menu():
                         with open("./archivos_txt/facturas.txt", "r") as archivo:
                             print(archivo.read())
                     except FileNotFoundError:
-                        print("\x1b[1;31m" +"\x1b[1;31m" +"No hay datos de facturas guardados en el archivo facturas.txt""\033[0m")
+                        print("\x1b[1;31m" +"\x1b[1;31m" +"No hay datos""\033[0m")
                 elif opc == 3:
                     borrarPantalla()
                     try:
@@ -346,20 +346,20 @@ def menu():
                             print(archivo.read())
 
                     except FileNotFoundError:
-                        print("\x1b[1;31m" +"No hay datos de créditos guardados en el archivo creditos.txt""\033[0m")
+                        print("\x1b[1;31m" +"No hay datos""\033[0m")
                 elif opc == 4:
                     borrarPantalla()
                     try:
                         with open("./archivos_txt/pagos.txt", "r") as archivo:
                             print(archivo.read())
                     except FileNotFoundError:
-                        print("\x1b[1;31m" +"No hay datos de pagos guardados en el archivo pagos.txt""\033[0m")
+                        print("\x1b[1;31m" +"No hay datos""\033[0m")
                 elif opc == 5:
                     borrarPantalla()
                     break
                 else:
                     borrarPantalla()
-                    print("\x1b[1;31m" +"Opción inválida.""\033[0m")    
+                    print("\x1b[1;31m" +"Error vuelva a intentar""\033[0m")    
 
         elif opc == 6:
             borrarPantalla()
@@ -375,10 +375,10 @@ def menu():
                     menu()
                 else:
                     borrarPantalla()
-                    print("\x1b[1;31m" +"Opción inválida""\033[0m")
+                    print("\x1b[1;31m" +"Error vuelva a intentar""\033[0m")
         else:
             borrarPantalla()
-            print("\x1b[1;31m" +"Opción inválida""\033[0m")
+            print("\x1b[1;31m" +"Error vuelva a intentar""\033[0m")
 txtCliente=[]
 txtFactura=[]
 txtcabCredito=[]
